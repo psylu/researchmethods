@@ -1,0 +1,19 @@
+[
+  {
+    "objectID": "pages/plot_generator.html",
+    "href": "pages/plot_generator.html",
+    "title": "Plot Generator",
+    "section": "",
+    "text": "Please enable JavaScript to experience the dynamic code cell content on this page.\nAuf dieser Seite können Sie eine Visualisierung von Resultaten eines 2x2 Designs erstellen.\nGeben Sie dafür Titel der Grafik ein, sowie den Namen und die Stufen der UV, den Namen der AV und die Mittelwerte aller Bedingungen.\n\n\n\n\n\n\nInteraktive Code Zellen\n\n\n\nErsetzen Sie ___ mit Ihren Informationen und führen Sie den Code aus.\n\nText muss in Anführungszeichen stehen (z.B. \"Super Titel\")\nZahlen müssen ohne Anführungszeichen angegeben werden (z.B. 0.36)\nDrücken Sie jeweils auf Run um den Code auszuführen.\n\n\n\nDefinieren Sie den Titel der Abbildung:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nDefinieren Sie den Namen und die Stufen der ersten unabhängigen Variable (UVA):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nDefinieren Sie den Namen und die Stufen der zweiten unabhängigen Variable (UVB):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nDefinieren Sie den Namen der abhängigen Variable (AV):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nDefinieren Sie die Zellen-Mittelwerte des Versuchsplans:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nMit der Funktion tabelle_generieren() werden alle oben definierten Informationen in einer Tabelle zusammengeführt. Führen sie anschliessend die Funktion versuchsplan_zeigen() aus, um Ihren Versuchsplan anzuzeigen:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nRun the function show_plot() to show your Plot:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Plot Generator"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Übungen Wissenschaftliches Arbeiten",
+    "section": "",
+    "text": "Bachelorstudiengang Psychologie\nFakultät für Verhaltenswissenschaften und Psychologie, Universität Luzern\nHS 2024"
+  }
+]

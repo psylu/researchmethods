@@ -1,0 +1,22 @@
+"0","
+
+show_plot = function(data){
+  data |>
+    ggplot(aes(x = UVA, y = value, color = UVB, shape = UVB, group = UVB)) +
+    geom_line(linewidth = 1, alpha = .4) +
+    geom_point(size = 3) +
+    labs(x = UVA,
+         y = AV,
+         color = UVB,
+         shape = UVB) + 
+    theme_classic() +
+    theme(legend.position = c(.9,.45),
+          axis.ticks.y = element_blank(),
+          axis.text.y = element_blank(),
+          text = element_text(size = 12)) +
+    ggtitle(title)
+}
+"
+"2","'""webr-r""' is not recognized as an internal or external command,
+operable program or batch file.
+"

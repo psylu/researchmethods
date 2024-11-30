@@ -1,0 +1,130 @@
+---
+title: "Plot Generator"
+author:
+  - name: Daniel Fitze
+    affiliation: Fakultät für Verhaltenswissenschaften und Psychologie, Universität Luzern
+    affiliation-url: https://www.unilu.ch/fakultaeten/vpf
+filters:
+  - webr
+---
+
+```{webr-r}
+#| context: setup
+library(tidyverse)
+library(cowplot)
+library(gridExtra)
+library(grid)
+```
+
+Auf dieser Seite können Sie eine Visualisierung von Resultaten eines 2x2 Designs erstellen.
+
+Geben Sie dafür Titel der Grafik ein, sowie den Namen und die Stufen der UV, den Namen der AV und die Mittelwerte aller Bedingungen.
+
+
+::: {.callout-tip}
+# Interaktive Code Zellen
+
+Ersetzen Sie `___` mit Ihren Informationen und führen Sie den Code aus.
+
+  - Text muss in Anführungszeichen stehen (z.B. `"Super Titel"`)
+  - Zahlen müssen ohne Anführungszeichen angegeben werden (z.B. `0.36`)
+  - Drücken Sie jeweils auf `Run` um den Code auszuführen.
+:::
+
+Definieren Sie den Titel der Abbildung:
+
+```{webr-r}
+title = "___"
+```
+
+
+Definieren Sie den Namen und die Stufen der ersten unabhängigen Variable (UVA):
+
+```{webr-r}
+UVA = "___"
+UVA_a1 = "___"
+UVA_a2 = "___"
+```
+
+Definieren Sie den Namen und die Stufen der zweiten unabhängigen Variable (UVB):
+```{webr-r}
+UVB = "___"
+UVB_b1 = "___"
+UVB_b2 = "___"
+```
+
+Definieren Sie den Namen der abhängigen Variable (AV):
+```{webr-r}
+AV = "___"
+```
+
+Definieren Sie die Zellen-Mittelwerte des Versuchsplans:
+```{webr-r}
+a1b1 = ___
+a1b2 = ___
+a2b1 = ___
+a2b2 = ___
+```
+
+
+```{webr-r}
+#| context: setup
+tabelle_generieren = function(){
+  expand_grid(UVA = as_factor(c(UVA_a1, UVA_a2)),
+              UVB = as_factor(c(UVB_b1, UVB_b2))) |>
+    mutate(value = c(a1b1, a1b2, a2b1, a2b2))
+}
+```
+
+
+```{webr-r}
+#| context: setup
+#| warnings: false
+show_plot = function(data){
+  data |>
+    ggplot(aes(x = UVA, y = value, color = UVB, shape = UVB, group = UVB)) +
+    geom_line(linewidth = 1, alpha = .4) +
+    geom_point(size = 3) +
+    labs(x = UVA,
+         y = AV,
+         color = UVB,
+         shape = UVB) + 
+    theme_classic() +
+    theme(legend.position.inside = c(.9,.45),
+          axis.ticks.y = element_blank(),
+          axis.text.y = element_blank(),
+          text = element_text(size = 14)) +
+    ggtitle(title)
+}
+
+```
+
+
+```{webr-r}
+#| context: setup
+#| warnings: false
+ versuchsplan_zeigen = function(data){
+    data |>
+      pivot_wider(names_from = UVB, values_from = value) |>
+      rename(` ` = UVA) |>
+      tableGrob(rows = NULL,
+                theme = ttheme_minimal()) |>
+      plot_grid()
+  }
+```
+
+Mit der Funktion `tabelle_generieren()` werden alle oben definierten Informationen in einer Tabelle zusammengeführt. Führen sie anschliessend die Funktion `versuchsplan_zeigen()` aus, um Ihren Versuchsplan anzuzeigen:
+```{webr-r}
+#| warnings: false
+d = tabelle_generieren()
+versuchsplan_zeigen(d)
+```
+
+Run the function `show_plot()` to show your Plot:
+```{webr-r}
+#| warnings: false
+show_plot(d)
+```
+
+
+

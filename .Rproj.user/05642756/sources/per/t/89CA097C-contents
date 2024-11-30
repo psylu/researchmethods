@@ -1,0 +1,37 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+  - index.qmd
+  - pages/*.qmd
+website:
+  title: Research Methods
+  site-url: https://psylu.github.io/researchmethods/
+  reader-mode: true
+  navbar:
+    background: secondary
+    left:
+    - href: pages/plot_generator.qmd
+
+  sidebar:
+    style: floating
+    search: true
+    contents:
+    - pages/plot_generator.qmd
+format:
+  html:
+    theme:
+      light:
+      - flatly
+      - styles/light.scss
+      dark:
+      - darkly
+      - styles/dark.scss
+    css:
+    - styles.css
+    - include/webex.css
+    toc: true
+    link-external-newwindow: true
+    include-after-body: include/webex.js
+editor:
+  render-on-save: true
